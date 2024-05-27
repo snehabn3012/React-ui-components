@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react'
+import { useGetTodosQuery } from './services/todos'
 
-function App() {
+import PaginationTable from './ui/PaginationTable';
+import ImageSlider from './ui/ImageSlider';
+
+export default function App() {
+  const { data, error, isLoading } = useGetTodosQuery();
+  console.log("data", data);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+      {error ? (
+        <>Error</>
+      ) : isLoading ? (
+        <>Loading...</>
+      ) : data ? (
+        <PaginationTable data={data}/>
+      ) : null}
 
-export default App;
+<ImageSlider />
+    </div>
+    
+  )
+}
