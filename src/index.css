@@ -12,6 +12,39 @@ code {
     monospace;
 }
 
-.space-r {
-  margin-right: 5px;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.navbar {
+  background-color: black;
+  padding: 1rem;
+  
+  li {
+    font-size: 1rem;
+    color: white;
+    margin-right: 2rem;
+  }
+}
+
+.toaster_success {
+  background-color: green;
+  color: white;
+}
+
+.toaster_warning {
+  background-color: yellow;
+  color: black;
+}
+
+.toaster_info {
+  background-color: blue;
+  color: white;
+}
+
+.toaster_danger {
+  background-color: red;
+  color: white;
 }

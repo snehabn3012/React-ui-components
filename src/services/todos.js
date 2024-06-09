@@ -7,7 +7,7 @@ export const todosApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://dummyjson.com' }),
   endpoints: (builder) => ({
     getTodos: builder.query({
-      query: (name) => `todos`,
+      query: ({ skip, limit = 20 }) => `/products?limit=${limit}&skip=${skip}&select=title,price`,
     }),
   }),
 })

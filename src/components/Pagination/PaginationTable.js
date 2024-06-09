@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import './PaginationTable.css';
 
-import usePagination from "../hooks/usePagination";
-import useDebounce from "../hooks/useDebounce";
+import usePagination from "../../hooks/usePagination";
+import useDebounce from "../../hooks/useDebounce";
 
 function PaginationTable({ data }) {
     const [paginatedData, setPaginatedData] = useState([]);

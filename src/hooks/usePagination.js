@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 function usePagination({ data, itemsPerPage }) {
     const [currentPage, setCurrentPage] = useState(1);
     const [pageRanges, setPageRanges] = useState([1, 2, 3]);
+
     const totalPages = Math.ceil(data.length / itemsPerPage);
 
     useEffect(() => {
@@ -25,7 +26,6 @@ function usePagination({ data, itemsPerPage }) {
 
     function getPaginatedData() {
         const begin = (currentPage - 1) * itemsPerPage;
-        // const end= Math.min(begin + , data.length);
         const end = begin + itemsPerPage
         return data.slice(begin, end);
     }

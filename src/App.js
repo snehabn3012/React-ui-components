@@ -15,11 +15,11 @@ export default function App() {
       ) : isLoading ? (
         <>Loading...</>
       ) : data ? (
-        <PaginationTable data={data}/>
+        <PaginationTable data={data} />
       ) : null}
 
-<ImageSlider />
+      <ImageSlider />
     </div>
-    
+
   )
 }
